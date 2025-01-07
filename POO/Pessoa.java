@@ -13,12 +13,20 @@ public class Pessoa {
     private double altura;
     private double peso;
 
-
+    //função construtora
     public Pessoa(){
         this.nome = "Sem nome";
         this.idade = 0;
         this.altura = 0;
         this.peso = 0;
+    }
+
+    //funçao construtora com atributos
+    public Pessoa(String nome, int idade, double altura, double peso){
+        this.nome =  nome;
+        this.idade = idade;
+        this.altura = altura;
+        this.peso = peso;
     }
 
     // Métodos = ações da classe
@@ -54,5 +62,22 @@ public class Pessoa {
 
     public double getPeso(){
         return this.peso;
+    }
+
+    public double calcularImc(){
+        return peso / (altura * altura);
+    }
+
+    public String classificacaoDeImc(){
+        double imc = calcularImc();
+
+        if(imc < 18.5) return "Abaixo do peso";
+        if(imc < 25.0) return "Peso normal";
+        if(imc < 30) return "Sobrepeso";
+        return "Obesidade";
+    }
+
+    public String apresentar(){
+        return "Olá, me chamo " + nome + ", eu tenho " + idade + " anos, e tenho " + altura + " de altura, e peso " + peso; 
     }
 }
