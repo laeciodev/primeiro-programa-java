@@ -31,7 +31,7 @@ public class Calculadora {
 
             if(opcao >= 1 && opcao <= 4){
                 
-                //Resgatar os núemeros do usuário
+                //Resgatar os números do usuário
                 System.out.println(" ");
                 System.out.println("Digite o primeiro número: ");
                 double num1 = scanner.nextDouble();
